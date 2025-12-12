@@ -1184,6 +1184,20 @@ export const modelsList: ModelInfo[] = [
         },
     },
     {
+        id: "kwaikat/kat-coder-pro-v1",
+        object: "model",
+        created: 1755815280,
+        owned_by: "kwaikat",
+        name: "KAT-Coder-Pro V1",
+        description:
+            "KAT-Coder-Pro V1 is KwaiKAT's most advanced agentic coding model in the KwaiKAT series. Designed specifically for agentic coding tasks, it excels in real-world software engineering scenarios, achieving a remarkable 73.4% solve rate on the SWE-Bench Verified benchmark. KAT-Coder-Pro V1 delivers top-tier coding performance and has been rigorously tested by thousands of in-house engineers. The model has been optimized for tool-use capability, multi-turn interaction, instruction following, generalization and comprehensive capabilities through a multi-stage training process, including mid-training, supervised fine-tuning (SFT), reinforcement fine-tuning (RFT), and scalable agentic RL.",
+        context_window: 256000,
+        max_tokens: 32000,
+        type: "language",
+        tags: ["reasoning"],
+        pricing: {},
+    },
+    {
         id: "meituan/longcat-flash-chat",
         object: "model",
         created: 1755815280,
@@ -1415,11 +1429,25 @@ export const modelsList: ModelInfo[] = [
         },
     },
     {
+        id: "mistral/devstral-2",
+        object: "model",
+        created: 1755815280,
+        owned_by: "mistral",
+        name: "Devstral 2",
+        description:
+            "An enterprise-grade text model that excels at using tools to explore codebases, editing multiple files, and powering software engineering agents.",
+        context_window: 256000,
+        max_tokens: 256000,
+        type: "language",
+        tags: ["tool-use"],
+        pricing: {},
+    },
+    {
         id: "mistral/devstral-small",
         object: "model",
         created: 1755815280,
         owned_by: "mistral",
-        name: "Devstral Small",
+        name: "Devstral Small 1.1",
         description:
             "Devstral is an agentic LLM for software engineering tasks built under a collaboration between Mistral AI and All Hands AI 🙌. Devstral excels at using tools to explore codebases, editing multiple files and power software engineering agents.",
         context_window: 128000,
@@ -1430,6 +1458,20 @@ export const modelsList: ModelInfo[] = [
             input: "0.0000001",
             output: "0.0000003",
         },
+    },
+    {
+        id: "mistral/devstral-small-2",
+        object: "model",
+        created: 1755815280,
+        owned_by: "mistral",
+        name: "Devstral Small 2",
+        description:
+            "Our open source model that excels at using tools to explore codebases, editing multiple files, and powering software engineering agents.",
+        context_window: 256000,
+        max_tokens: 256000,
+        type: "language",
+        tags: ["tool-use"],
+        pricing: {},
     },
     {
         id: "mistral/magistral-medium",
@@ -2146,6 +2188,79 @@ export const modelsList: ModelInfo[] = [
         },
     },
     {
+        id: "openai/gpt-5.2",
+        object: "model",
+        created: 1755815280,
+        owned_by: "openai",
+        name: "GPT-5.2",
+        description:
+            "GPT-5.2 is OpenAI's best general-purpose model, part of the GPT-5 flagship model family. It's their most intelligent model yet for both general and agentic tasks.",
+        context_window: 400000,
+        max_tokens: 128000,
+        type: "language",
+        tags: [
+            "tool-use",
+            "vision",
+            "file-input",
+            "reasoning",
+            "image-generation",
+            "implicit-caching",
+        ],
+        pricing: {
+            input: "0.00000175",
+            output: "0.000014",
+            input_cache_read: "0.000000175",
+        },
+    },
+    {
+        id: "openai/gpt-5.2-chat",
+        object: "model",
+        created: 1755815280,
+        owned_by: "openai",
+        name: "GPT-5.2 Chat",
+        description:
+            "The model powering ChatGPT is gpt-5.2-chat-latest: this is OpenAI's best general-purpose model, part of the GPT-5 flagship model family.",
+        context_window: 128000,
+        max_tokens: 16384,
+        type: "language",
+        tags: [
+            "vision",
+            "file-input",
+            "tool-use",
+            "reasoning",
+            "implicit-caching",
+        ],
+        pricing: {
+            input: "0.00000175",
+            output: "0.000014",
+            input_cache_read: "0.000000175",
+        },
+    },
+    {
+        id: "openai/gpt-5.2-pro",
+        object: "model",
+        created: 1755815280,
+        owned_by: "openai",
+        name: "GPT 5.2 ",
+        description:
+            "Version of GPT-5.2 that produces smarter and more precise responses.",
+        context_window: 400000,
+        max_tokens: 128000,
+        type: "language",
+        tags: [
+            "tool-use",
+            "vision",
+            "implicit-caching",
+            "image-generation",
+            "reasoning",
+            "file-input",
+        ],
+        pricing: {
+            input: "0.000021",
+            output: "0.000168",
+        },
+    },
+    {
         id: "openai/gpt-oss-120b",
         object: "model",
         created: 1755815280,
@@ -2756,7 +2871,7 @@ export const modelsList: ModelInfo[] = [
         description:
             "Grok 4.1 Fast is xAI's best tool-calling model with a 2M context window. It reasons and completes agentic tasks accurately and rapidly, excelling at complex real-world use cases such as customer support and finance. To optimize for speed use this variant. Otherwise, use the reasoning version.",
         context_window: 2000000,
-        max_tokens: 2000000,
+        max_tokens: 30000,
         type: "language",
         tags: [],
         pricing: {
@@ -2774,7 +2889,7 @@ export const modelsList: ModelInfo[] = [
         description:
             "Grok 4.1 Fast is xAI's best tool-calling model with a 2M context window. It reasons and completes agentic tasks accurately and rapidly, excelling at complex real-world use cases such as customer support and finance. To optimize for maximal intelligence use this variant. Otherwise, use the non-reasoning version.",
         context_window: 2000000,
-        max_tokens: 2000000,
+        max_tokens: 30000,
         type: "language",
         tags: ["reasoning"],
         pricing: {

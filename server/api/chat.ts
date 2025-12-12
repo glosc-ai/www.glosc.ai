@@ -17,7 +17,6 @@ export default defineEventHandler(async (event) => {
     }: {
         messages: UIMessage[];
         model: string;
-        webSearch: boolean;
         tools?: Record<string, any>;
     } = await readBody(event);
 
