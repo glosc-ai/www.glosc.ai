@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         dirs: ["~~/shared", "~~/server/utils", "@/components/ui/**"],
     },
 
-    modules: ["shadcn-nuxt"],
+    modules: ["shadcn-nuxt", "@nuxtjs/seo"],
     shadcn: {
         /**
          * Prefix for all the imported component.
@@ -37,5 +37,9 @@ export default defineNuxtConfig({
                 class: "dark",
             },
         },
+    },
+    site: {
+        url: "https://www.glosc.ai",
+        name: "Glosc Copilot",
     },
 });
