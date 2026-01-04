@@ -6,9 +6,6 @@ import {
     ToolLoopAgent,
 } from "ai";
 import type { ToolSet, UIMessage } from "ai";
-// import { VertexAI } from "~~/server/utils/vertex";
-
-import { vertex } from "@ai-sdk/google-vertex";
 
 // http://localhost:3000/api/chat
 export default defineEventHandler(async (event) => {
@@ -35,8 +32,7 @@ export default defineEventHandler(async (event) => {
     // const vertex = new VertexAI();
 
     const agent = new ToolLoopAgent({
-        // model: model || "xai/grok-code-fast-1",
-        model: vertex("gemini-2.5-flash"),
+        model: model || "xai/grok-code-fast-1",
         tools,
     });
 
