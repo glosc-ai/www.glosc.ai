@@ -6,6 +6,7 @@ import {
     ToolLoopAgent,
 } from "ai";
 import type { ToolSet, UIMessage } from "ai";
+import { webSearch } from "@exalabs/ai-sdk";
 
 // http://localhost:3000/api/chat
 export default defineEventHandler(async (event) => {
@@ -13,10 +14,12 @@ export default defineEventHandler(async (event) => {
         messages,
         model,
         tools: clientTools,
+        webSearch: clientWebSearch,
     }: {
         messages: UIMessage[];
         model: string;
         tools?: Record<string, any>;
+        webSearch?: boolean;
     } = await readBody(event);
 
     const tools: ToolSet = {};
@@ -27,6 +30,9 @@ export default defineEventHandler(async (event) => {
                 inputSchema: jsonSchema(toolDef.inputSchema.jsonSchema),
             });
         }
+    }
+    if (clientWebSearch) {
+        tools["webSearch"] = webSearch();
     }
 
     // const vertex = new VertexAI();
