@@ -476,28 +476,6 @@
 <script setup lang="ts">
 import type { ModelInfo } from "~~/shared/interface";
 import { onClickOutside } from "@vueuse/core";
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "~/components/ui/accordion";
-import { Badge } from "~/components/ui/badge";
-import { Button } from "~/components/ui/button";
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from "~/components/ui/hover-card";
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "~/components/ui/table";
 
 type SortKey =
     | "id"

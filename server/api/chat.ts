@@ -2,10 +2,13 @@ import {
     convertToModelMessages,
     streamText,
     tool,
-    stepCountIs,
     jsonSchema,
+    ToolLoopAgent,
 } from "ai";
 import type { ToolSet, UIMessage } from "ai";
+// import { VertexAI } from "~~/server/utils/vertex";
+
+import { vertex } from "@ai-sdk/google-vertex";
 
 // http://localhost:3000/api/chat
 export default defineEventHandler(async (event) => {
@@ -29,11 +32,16 @@ export default defineEventHandler(async (event) => {
         }
     }
 
-    const result = streamText({
-        model: model || "xai/grok-code-fast-1",
-        messages: await convertToModelMessages(messages),
+    // const vertex = new VertexAI();
+
+    const agent = new ToolLoopAgent({
+        // model: model || "xai/grok-code-fast-1",
+        model: vertex("gemini-2.5-flash"),
         tools,
-        stopWhen: stepCountIs(10),
+    });
+
+    const result = await agent.stream({
+        messages: await convertToModelMessages(messages),
     });
 
     return result.toUIMessageStreamResponse();
